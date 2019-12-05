@@ -1,0 +1,7 @@
+# Input for the BH - The code reads only the first values of each line, starting from the 2nd line
+Run1            // Label
+1.4 100         // Step-size and number of steps
+0.05            // KT                
+13              // Total number of atoms
+0.001 0.001     // Parameters for structure comparison
+./Database      // Path to the folder with the database

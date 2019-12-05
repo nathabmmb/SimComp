@@ -1,0 +1,2 @@
+plot "Energies.dat" w lines
+pause -1

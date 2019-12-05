@@ -1,0 +1,112 @@
+
+Program has started. Reading the input.
+
+The label used for temporary files is Run1.
+The step size in each x-y-z direction and number of steps are: 1 and 100.
+The KT value for the Metropolis criterion is 0.1.
+Total number of atoms is: 13.
+
+End of input reading.
+Starting from step 0...
+Step 0 ->  new energy -42.5589704916, structure accepted .
+Step 1 ->  new energy -42.9525869242, structure accepted .
+Step 2 ->  new energy -42.9525869242, structure accepted .
+Step 3 ->  new energy -43.6629006227, structure accepted .
+Step 4 ->  new energy -43.5990365942, structure accepted .
+Step 5 ->  new energy -43.6629006227, structure accepted .
+Step 6 ->  new energy -43.5990365942, structure accepted .
+Step 7 ->  new energy -44.8856652605, structure accepted .
+Step 8 ->  new energy -44.8856652605, structure accepted .
+Step 9 ->  new energy -44.8856652605, structure accepted .
+Step 10 ->  new energy -44.8856652605, structure accepted .
+Step 11 ->  new energy -44.8856652605, structure accepted .
+Step 12 ->  new energy -44.8856652605, structure accepted .
+Step 13 ->  new energy -44.8856652605, structure accepted .
+Step 14 ->  new energy -44.8856652605, structure accepted .
+Step 15 ->  new energy -44.8856652605, structure accepted .
+Step 16 ->  new energy -44.8856652605, structure accepted .
+Step 17 ->  new energy -44.8856652605, structure accepted .
+Step 18 ->  new energy -44.8856652605, structure accepted .
+Step 19 ->  new energy -44.8856652605, structure accepted .
+Step 20 ->  new energy -44.8856652605, structure accepted .
+Step 21 ->  new energy -43.3839925787, structure not accepted .
+Step 22 ->  new energy -42.9202042215, structure not accepted .
+Step 23 ->  new energy -44.8856652605, structure accepted .
+Step 24 ->  new energy -44.8856652605, structure accepted .
+Step 25 ->  new energy -44.8856652605, structure accepted .
+Step 26 ->  new energy -44.8856652605, structure accepted .
+Step 27 ->  new energy -44.8856652605, structure accepted .
+Step 28 ->  new energy -44.8856652605, structure accepted .
+Step 29 ->  new energy -44.8856652605, structure accepted .
+Step 30 ->  new energy -44.8856652605, structure accepted .
+Step 31 ->  new energy -44.8856652605, structure accepted .
+Step 32 ->  new energy -44.8856652605, structure accepted .
+Step 33 ->  new energy -44.8856652605, structure accepted .
+Step 34 ->  new energy -44.8856652605, structure accepted .
+Step 35 ->  new energy -44.8856652605, structure accepted .
+Step 36 ->  new energy -44.8856652605, structure accepted .
+Step 37 ->  new energy -44.8856652605, structure accepted .
+Step 38 ->  new energy -44.8856652605, structure accepted .
+Step 39 ->  new energy -43.104596755, structure not accepted .
+Step 40 ->  new energy -44.8856652605, structure accepted .
+Step 41 ->  new energy -44.8856652605, structure accepted .
+Step 42 ->  new energy -44.8856652605, structure accepted .
+Step 43 ->  new energy -43.722315473, structure not accepted .
+Step 44 ->  new energy -44.8856652605, structure accepted .
+Step 45 ->  new energy -44.8856652605, structure accepted .
+Step 46 ->  new energy -43.6629006227, structure not accepted .
+Step 47 ->  new energy -44.8856652605, structure accepted .
+Step 48 ->  new energy -43.6629006227, structure not accepted .
+Step 49 ->  new energy -43.0698700721, structure not accepted .
+Step 50 ->  new energy -43.6629006227, structure not accepted .
+Step 51 ->  new energy -44.8856652605, structure accepted .
+Step 52 ->  new energy -44.8856652605, structure accepted .
+Step 53 ->  new energy -44.8856652605, structure accepted .
+Step 54 ->  new energy -44.8856652605, structure accepted .
+Step 55 ->  new energy -44.8856652605, structure accepted .
+Step 56 ->  new energy -44.8856652605, structure accepted .
+Step 57 ->  new energy -44.8856652605, structure accepted .
+Step 58 ->  new energy -44.8856652605, structure accepted .
+Step 59 ->  new energy -44.8856652605, structure accepted .
+Step 60 ->  new energy -44.8856652605, structure accepted .
+Step 61 ->  new energy -44.8856652605, structure accepted .
+Step 62 ->  new energy -44.8856652605, structure accepted .
+Step 63 ->  new energy -42.8973064627, structure not accepted .
+Step 64 ->  new energy -44.8856652605, structure accepted .
+Step 65 ->  new energy -44.8856652605, structure accepted .
+Step 66 ->  new energy -44.8856652605, structure accepted .
+Step 67 ->  new energy -43.3889801039, structure not accepted .
+Step 68 ->  new energy -44.8856652605, structure accepted .
+Step 69 ->  new energy -44.8856652605, structure accepted .
+Step 70 ->  new energy -43.5990365942, structure not accepted .
+Step 71 ->  new energy -44.8856652605, structure accepted .
+Step 72 ->  new energy -44.8856652605, structure accepted .
+Step 73 ->  new energy -44.8856652605, structure accepted .
+Step 74 ->  new energy -44.8856652605, structure accepted .
+Step 75 ->  new energy -44.8856652605, structure accepted .
+Step 76 ->  new energy -44.8856652605, structure accepted .
+Step 77 ->  new energy -44.8856652605, structure accepted .
+Step 78 ->  new energy -44.8856652605, structure accepted .
+Step 79 ->  new energy -43.5990365942, structure not accepted .
+Step 80 ->  new energy -44.8856652605, structure accepted .
+Step 81 ->  new energy -44.8856652605, structure accepted .
+Step 82 ->  new energy -44.8856652605, structure accepted .
+Step 83 ->  new energy -43.722315473, structure not accepted .
+Step 84 ->  new energy -43.6992279444, structure not accepted .
+Step 85 ->  new energy -44.8856652605, structure accepted .
+Step 86 ->  new energy -44.8856652605, structure accepted .
+Step 87 ->  new energy -44.8856652605, structure accepted .
+Step 88 ->  new energy -42.8439367132, structure not accepted .
+Step 89 ->  new energy -44.8856652605, structure accepted .
+Step 90 ->  new energy -44.8856652605, structure accepted .
+Step 91 ->  new energy -44.8856652605, structure accepted .
+Step 92 ->  new energy -43.4613514524, structure not accepted .
+Step 93 ->  new energy -44.8856652605, structure accepted .
+Step 94 ->  new energy -44.8856652605, structure accepted .
+Step 95 ->  new energy -44.8856652605, structure accepted .
+Step 96 ->  new energy -44.8856652605, structure accepted .
+Step 97 ->  new energy -44.8856652605, structure accepted .
+Step 98 ->  new energy -44.8856652605, structure accepted .
+Step 99 ->  new energy -44.8856652605, structure accepted .
+Maximum number of steps!
+*********************************************Program finished successfully! 

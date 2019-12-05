@@ -1,0 +1,5 @@
+# Input for the BH - The code reads only the first values of each line, starting from the 2nd line
+Run6            // Label
+1.2 100         // Step-size and number of steps
+0.06            // KT                
+13              // Total number of atoms

@@ -1,0 +1,17 @@
+units metal
+dimension 3
+boundary p p p
+atom_style charge
+
+read_data Structure.dat
+
+pair_style	eam
+pair_coeff	* * Ni_u3.eam
+
+neighbor 2.0 bin
+neigh_modify delay 1 every 1 check yes
+
+dump 1 all xyz 1 relaxed.xyz
+dump_modify 1 element Ni flush yes
+
+minimize 1.0e-20 1.0e-20 100000 10000

@@ -1,0 +1,23 @@
+apunte marce: (dia 04 pt2)
+"el objetivo de la DM es explorar el 100% de la (H)SEP" (en realidad el espacio de las fases)
+Formalismo newtoniano 3N Ec.Dif (2° orden)
+Formalismo Hamiltoniano 6N Ec.Dif (1° orden) 
+Formalismo Lagrangiano [usado afuera del microcanonico]
+
+Algoritmo predictor corrector (Nordsieck de 5to orden); 
+Expansión de 5 orden de r(t) en terminos de q, y luego a cada q le hacemos una expansión hasta el quinto orden  [Prediccion de valores]. Luego llamamos a subrutina de fuerzas, calculamos fuerzas y calculamos la diferencia entre la prediccioń y el calculod e fuerzas (dq2) y con ese error corregimos todos los otros q's. [Corrección de valores] Existen constantes ya parametrizadas que facilitan la estabilidad del algoritmo. (surgen de la etapa de corrección)
+No conserva la energía a tiempos largos (depende de h), aunque tiene buena conservación local de la energía. Puede usarse en cualquier ensamble. Es usado en multi-step algorithms (pasos temporales diferenciados para cada particula! O.o). No es reversible.
+
+Velocity Verlet: Es estable a tiemps largos,  necesita usar h pequeño. Es reversible. No se puede usar en ensambles donde F depende de V (eg Noose-Hoover)
+
+Check: Materials Studio
+Check: CrystalMaker
+
+Al setear V0 en realidad se calcula una distribución gaussiana con media 0 y varianza 1 y luego se reescalea por kT
+(Check if it's still true in 2020)
+
+Condiciones Periodicas de Contorno: La dimensión de la caja debe ser al menos 2Xrc
+rc = longitud de correlación (I don't know how to calculate that... Es dependiente de T)
+
+FALTA FORCEFIELDS
+

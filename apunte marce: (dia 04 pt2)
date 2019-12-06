@@ -18,6 +18,85 @@ Al setear V0 en realidad se calcula una distribución gaussiana con media 0 y va
 
 Condiciones Periodicas de Contorno: La dimensión de la caja debe ser al menos 2Xrc
 rc = longitud de correlación (I don't know how to calculate that... Es dependiente de T)
+Implementación: rx = rx-int(rx/rbox)  O.o
 
-FALTA FORCEFIELDS
+Existen 3 formas de hacer NVT
+* Estocasticas                  -> Escaleando las velocidades
+  (pueden ser local o global)   -> Agregando Fuerzas Aleatorias
 
+* Deterministas                 -> Extendiendo el sistema (Preguntar!)
+
+La primera aproximación a un ensamble NVT es un reescaleo constante de las velocidades para cumplir v^2=kT/m
+Esto no corresponde en realidad a un NVT ya que el reescaleo produce discontinuidades en el espacio de las fases.
+Se puede utilizar al comienzo de una simulación para termalizar el sistema.
+
+Termostato de Berendsen: Se da un escaleo dampeado por un factor tau a todas las partículas. Un tanto agresivo pero barato.
+
+Termostato de Andersen: Se selecciona solo una porción aleatoria de partículas que sigue una distribución de Poison y se aplica un factor de escaleo a esas solas y estas son encargadas de transmitir el deltaT a las demás particulas.
+Es menos invasiva y efectivamente puede dar un NVT formalmente dicho. Los parametros utilizados por el termostato tienen una correlación física con el coeficiente de conductividad térmica del material.
+
+Termostato de Nosé (y luego Hoover) [Determinsita, sistema extendido]: Se extiende el sistema, se le da un grado de libertad S que representa el baño termico, con su momento conjugado pS y su masa ficticia Q que fricciona con el sistema modificando su temperatura. Se moodifican las ecuaciones de movimiento para incluir al bañotermico como una meta particula! V = s*dr/dt.  Q es el parametro que regula la velocidad de las fluctuaciones de T (la agresividad del baño). El lagrangiano pasa de L = K-U para ser Ls = K + Ks - U - Us. Esto produce una dinámica canonica propiamente dicha sin ningún artefacto que no tenga significado físico.
+Hoover propone la inclusión de un parametro de fricción equivalente a spunto/s y le termina de dar todo el sentido físico al termostato. Es lo mejor que hay hasta el día de hoy para hacer DM en el canónico (NVT). Es facil de incorporar a velocity verlet!
+
+
+Dinámica de Langevin: Asume dinámica Newtoniana. Plantea que una partícula browniana experimanta una fricción con el medio dada por un coeficiente de fricción.. Propone una solución exponencial de las ecuaciones que es ilegal por el teorema de equipartición (porque implica que a t-> infinito : v -> 0). Langevin introduce una componente estocástica con distribución gaussiana y amplitud asociada a la temperatura que en definitiva mantiene la temperatura fluctuante al rededor de un valor constante. Mediante comparación de los valores medios de velocidad entre el teorema de equipartición y la dinámica de langevin resulta el teorema de fluctuación-disipación. Una aplicación de esta dinámica es el algoritmo de Ermak.
+
+
+Estos termostatos también se suelen refuncionalizar como barostatos, reescaleando el volumen de la caja. El de Berendsen es facilito.
+
+Lista de vecinos de Verlet: En sistemas densos es bastante fácil, pero en sistemas poco densos la tasa de actualización debe ser mucho más alta para no cometer errores.
+
+DM ab initio: Hay dos tipos?
+*Born-Oppenheimer MD
+    Movemos los nucleos clásicamente y los electrones los resolvemos cuanticamente on the fly a cada paso temporal. Tiene problemas de integración (conservación de energía) a tiempos "medios y largos".  
+
+*Car-Parrinello MD
+    Usa un lagrangiano extendido, considera energía cinética (nucleos y electrones), energía potencial que es función de coordenadas nucleares y funciones orthonormales como constraints para representar la interacción de los electrones. Y hay que sacarle la derivada (mameeeeta). Considera que los orbitales tienen una masa ficticia (Que loco!)
+
+
+COffeeeeee..............
+
+
+Jime Olmos: Potenciales
+Upper limit de los potenciales: Hardware
+Lower limit de los potenciales: efectos electrónicos
+
+Morse > LJ; el alfa me deja controlar la anharmonicidad del enlace. LJ es más para gases o Van der Waals
+
+Potenciales coulombicos son monstruosos, porque decaen horripilantemente lentos. (en 20A siguen siendo importantes.)
+La primera aproximación para resolverlos es la suma de ewalds, hay mucha matemática y no es parte del curso... google later!
+
+Los potenciales de a pares favorecen la sobrecoordinación. Porque con cada átomos que se acerca disminuye la energía, pero eso es poco realista en ciertos casos. En metales por ejemplo, tienden siempre a FCC, y nunca ves un BCC.
+
+Potenciales para moléculas... usan terminos armónicos (lenght and angle) y periódicos (torsion)
+
+BondOrderPotentials:
+Vij es una suma de dos términos... uno estrictamente de a pares y otro que considera el ambiente y la coordinación.
+Reax considera cargas dinámicas! O.O
+
+Potenciales para Semiconductores
+REBO -> Reactive Empiric Bond Order
+AMREBO -> Adaptive Molecular REBO
+Tersoff Primero para Silicio y luego para Carbono
+
+Potenciales para metales:
+Al principio se usaba LJ OMG! jaja
+*Métodos basados en la densidad local (Atomos ubicados cercanos a la posición de equilibrio embebidos en un mar de e-)
+    Densidad electrónica precalculada por HF aproximada como esférica!
+    Terminos repulsivos (de a pares) y términos de la densidad (manybody)
+    EAM (Embedded atom method) no incluye angularidad (ambiente), falla para BCC, falla para clusters pequeños
+    MEAM (ModifiedEAMa) incluye angularidad en el término de la densidad
+    Gupta // TB-SMA (TightBinding - Second Moment Approximation) Tiene 5 parametros, relativamente facil de parametrizar y calcular.
+
+Potenciales para agua: Depende del tipo de agua :p
+Hay más de 50. Se clasifican ségún:
+- Cantidad de sitios
+- Rígidos vs Flexibles
+- Polarizados vs no polarizados
+
+
+
+Cómo se construye un potencial??
+El set de validación debe ser distinto al set de parametrización (obveo, igual que en ML)
+
+Seguimos el lunes :(((
